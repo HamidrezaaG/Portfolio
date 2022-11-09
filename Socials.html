@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Economica">
+	<style>
+		:root {
+			--type-quote: Economica;
+			--side-padding: calc(0.5em + 2vw);
+		}
+		
+		.fade {
+		animation-name: fadeanim;
+		animation-duration: 0.8s;}
+		@keyframes fadeanim {
+		from {opacity:0}
+		to {opacity:1}
+		}
+		
+		.slideUp {
+		--slide-duration: 0.8s;
+		position: relative;
+		animation-name: slideUpanim;
+		animation-duration: var(--slide-duration);
+		}
+		@keyframes slideUpanim {
+			0%   { transform:translateY(-100px); }
+			50% { transform:translateY(20px); }
+			100% { transform:translateY(0px); }
+		}
+		
+		.slideRight {
+		--slide-duration: 2s;
+		position: relative;
+		animation-name: slideRightanim;
+		animation-duration: var(--slide-duration);
+		}
+		@keyframes slideRightanim {
+			0%   { transform:translateX(-800px); }
+			20%  { transform:translateX(-800px); }
+			75%  { transform:translateX(5px); }
+			100% { transform:translateX(0px); }
+		}
+		
+		.center {
+			position: absolute;
+			top: 50%;
+			left: 0%;
+			-ms-transform: translate(0%, -50%);
+			transform: translate(0%, -50%);
+		}
+		
+		.box {
+			color:white;
+			width: 70vw;
+			font: 1.0em var(--type-quote);
+			overflow: hidden;
+			border-left: 4px solid;
+			padding-right: 0;
+			padding-left: var(--side-padding);
+		}
+		
+		h1 {position: relative; font-weight: bolder; line-height: 0.5em; text-align: left; font-size: calc(max(1.5em, min(6em, 20vmin))); }
+		p  {position: relative; font-weight: lighter; line-height: 0.5em; text-align: left; font-size: calc(max(0.8em,min(3em, 10vmin)));}
+		
+	</style>
+</head>
+
+<body style="background-color:black">
+
+		<div class="center">
+			<div class="slideUp">
+				<div class="fade">
+					<div class="box">
+						<div class="slideRight" style="--slide-duration: 2.2s;">
+							<h1>Hamidreza Ghasemi</h1>
+						</div>
+						<div class="slideRight" style="--slide-duration: 2.7s;">
+							<p>Programmer - Tools developer - Tech Artist</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+	<script>
+	// Disable google sites scroll bar
+	var parentIframe = parent.document.getElementsByTagName('iframe')[0];
+	if(parentIframe != null)
+	parentIframe.scrolling="no";
+	</script>
+	
+</body>
+
+
+</html>
