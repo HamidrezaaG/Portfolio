@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Economica">
+	<style>
+		
+		:root 
+		{
+			--type-quote: Economica;
+			--border: 1vmin;
+			--title: 'Title';
+			--aspect: calc(9/16);
+		}
+		
+		.fade{
+			animation-name: fadeanim;
+			animation-duration: 1s;}
+			@keyframes fadeanim {
+			from {opacity:0}
+			to {opacity:1}
+		}
+		
+		.center 
+		{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-ms-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+		}
+		
+		.box
+		{
+			width: 100vw;
+			height: calc(100vw * var(--aspect));
+			background-color: #0004;
+		}
+
+		.titlebar
+		{
+			position: absolute;
+			background-color: #0000;
+			
+			transition: all 0.2s ease 0ms;
+			top: 50%;
+			left: 50%;
+			font: 1.0em var(--type-quote);
+			color: #FFF0;
+			transform: translate(-50%, -50%);
+			font-weight: bolder;
+			text-align: center;
+			font-size: 18vmin;
+			} 
+			.titlebar:after {
+			content: var(--title);
+		}
+		
+		.vid
+		{
+			z-index:-1;
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			color:white;
+			transition: all 0.2s ease 0ms;
+		}
+		
+		.box:hover .titlebar
+		{
+			color: #FFFF;
+		}		
+		
+		.box:hover .vid
+		{
+			filter: brightness(40%);
+		}
+		
+	</style>
+</head>
+<body>
+ 
+		<a href="#" class="fade center box">
+			<video poster="http://content.bitsontherun.com/thumbs/bkaovAYt-320.jpg" autoplay="" loop="" muted="" class="vid">
+			<source src="http://content.bitsontherun.com/videos/bkaovAYt-52qL9xLP.mp4">
+			</video>	
+			<div class="titlebar"></div>
+		</a>
+		
+		<script>
+			// Disable google sites scroll bar
+			var parentIframe = parent.document.getElementsByTagName('iframe')[0];
+			if(parentIframe != null)
+			parentIframe.scrolling="no";
+		</script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+	<style>
+		
+		:root {
+			
+			--ElementDiameter: 75vmin;
+			--ButtonRadius: 6vmin;
+		}
+
+		.fade {
+		animation-name: fadeanim;
+		animation-duration: 2s;
+		}		
+		
+		@keyframes fadeanim {
+			0%   { opacity:0; }
+			80%  { opacity:0; }
+			100% { opacity:1; }
+		}
+					
+		.fade2 {
+		animation-name: fadeanim2;
+		animation-duration: 2s;
+		}
+		
+		@keyframes fadeanim2 {
+			0%   { opacity:0; }
+			30%  { opacity:0; }
+			100% { opacity:1; }
+		}
+		
+		.main {
+			width: var(--ElementDiameter);
+			height: var(--ElementDiameter);
+			position: absolute;
+			left: 50%;
+			top: calc(50%);
+			padding-left: var(--ButtonRadius);
+			transform: translate(-50%, calc(-50% - 3vmin));
+		}
+
+		.CPic {
+			position: absolute;
+			width:  var(--ElementDiameter);
+			height: var(--ElementDiameter);
+			border: 1vmin white;
+			border-radius: 50%;
+			background-color: black;
+			overflow: hidden;
+		}
+		
+		.CButton {
+		animation-name: rollanim1;
+		animation-duration: 1s;
+		
+		border-radius: 50%;
+		position: absolute;
+		width:  calc(var(--ButtonRadius) * 2);
+		height: calc(var(--ButtonRadius) * 2);
+		
+		top: 0px;
+		background-color: #6666;
+		border: 1vmin solid #fff;
+		
+		transition: all 0.2s linear 0ms;
+		--delta : calc(0.5 * var(--ElementDiameter));
+		--finalAngle : 60deg;
+		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+		
+		transform-origin: var(--delta) var(--delta);
+		transform: rotate(var(--finalAngle)) translate(0,2vmin);
+		}
+		
+		@keyframes rollanim1 {
+		0%   { transform: rotate(400deg) translate(0,2vmin);}
+		10%  { transform: rotate(400deg) translate(0,2vmin);}
+		50%  { transform: rotate(297deg) translate(0,2vmin);}
+		100% { transform: rotate(300deg) translate(0,2vmin);}
+		}                                
+										 
+		@keyframes rollanim2 {           
+		0%   { transform: rotate(360deg) translate(0,2vmin);}
+		5%   { transform: rotate(360deg) translate(0,2vmin);}
+		50%  { transform: rotate(272deg) translate(0,2vmin);}
+		100% { transform: rotate(275deg) translate(0,2vmin);}
+		}                                
+										 
+		@keyframes rollanim3 {           
+		0%   { transform: rotate(320deg) translate(0,2vmin);}
+		50%  { transform: rotate(247deg) translate(0,2vmin);}
+		100% { transform: rotate(250deg) translate(0,2vmin);}
+		}
+		
+		.CButton:hover {
+		background-color: #82B36C;
+		top: 0.5vmin;
+		}
+		
+		.CButton:active {
+		background-color: #A4D58E;
+		top: 1.5vmin;
+		}
+		
+		.BPic {		
+			animation-name: counterrollanim1;
+			animation-duration: 1s;			
+			--rad : calc(var(--ButtonRadius));
+			width:  var(--rad);
+			height: var(--rad);
+			transform: rotate(var(--finalAngle));
+			fill: black;
+		}
+		
+		.BPic
+		@keyframes counterrollanim1 {
+		0%   { transform: rotate(275deg);}
+		60% { transform: rotate(40deg);}
+		100% { transform: rotate(60deg);}
+		}
+		
+		@keyframes counterrollanim2 {
+		0%   { transform: rotate(275deg);}
+		60% { transform: rotate(65deg);}
+		100% { transform: rotate(85deg);}
+		}
+		
+		@keyframes counterrollanim3 {
+		0%   { transform: rotate(275deg);}
+		60% { transform: rotate(90deg);}
+		100% { transform: rotate(110deg);}
+		}
+		
+	</style>
+</head>
+
+<body>
+
+	<div class="main">
+		<div class="fade2 CPic" style="animation-duration: 0.5s;"></div>
+		<div class="fade"><img class="CPic" src="https://drive.google.com/uc?export=view&id=1e1Zjp2HiBZCJ40UD1tTW3CGvB6Z77KEa"></img></div>
+		
+		<div class="fade2" style="animation-duration: 1.5s;">
+			<div class="roller">
+				<a href="mailto:hamidrezaa.g@gmail.com"
+				target="_blank" rel="noopener noreferrer" class="CButton"
+				style="animation-name : rollanim1; --finalAngle : 300deg; animation-duration: 2.65s;">
+				<img class="BPic" src="https://drive.google.com/uc?export=view&id=13_cjCnxyQMyvLlghkLuOzEOXpADQn1WM"
+				style="animation-name : counterrollanim1; --finalAngle : 60deg; animation-duration: 1.65s;"></img>
+				</a>
+			</div>
+		</div>	
+		
+		<div class="fade2" style="animation-duration: 1.25s;">
+			<div class="roller">
+				<a 
+				href="https://drive.google.com/file/d/1FgXurFiJS_eVs2yr_1I3tmdBux1PFB3q/view?usp=share_link"
+				target="_blank" rel="noopener noreferrer" class="CButton"
+				style="animation-name : rollanim2; --finalAngle : 275deg; animation-duration: 2.55s;">
+				<img class="BPic" src="https://drive.google.com/uc?export=view&id=10QPhcRxVSuqhuOFT4kmpIBTWcXl4eQ58"
+				style="animation-name : counterrollanim2; --finalAngle : 85deg; animation-duration: 1.55s;"></img>
+				</a>
+			</div>
+		</div>	
+		
+		<div class="fade2" style="animation-duration: 1s">
+			<div class="roller">
+				<a 
+				href="https://www.linkedin.com/in/hamidreza-ghasemi-829735197/"
+				target="_blank" rel="noopener noreferrer" class="CButton"
+				style="animation-name : rollanim3; --finalAngle : 250deg;  animation-duration: 2.40s;">
+				<img class="BPic" src="https://drive.google.com/uc?export=view&id=1xvY_0I8Q1SOa6GKRc19p1Q6Oz5D1RCi-"
+				style="animation-name : counterrollanim3; --finalAngle : 110deg; animation-duration: 1.40s;"></img>
+				</a>
+			</div>
+		</div>	
+		
+	</div>
+	
+		<script>
+			// Disable google sites scroll bar
+			var parentIframe = parent.document.getElementsByTagName('iframe')[0];
+			if(parentIframe != null)
+			parentIframe.scrolling="no";
+		</script>
+	
+</body>
+
+
+</html>
